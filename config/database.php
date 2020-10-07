@@ -7,7 +7,7 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $host = $url["host"] ?? '126.0.0.1';
 $username = $url["user"] ?? 'root';
 $password = $url["pass"] ?? null;
-$database = substr($url["path"], 1);
+$database = substr($url["path"], 1) ?? getenv('DB_DATABASE');
 
 return [
 
@@ -64,6 +64,21 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+
+        // 'mysql' => [
+        //     'driver' => 'mysql',
+        //     'host' => $host,
+        //     'port' => env('DB_PORT', '3306'),
+        //     'database' => env('DB_DATABASE'),
+        //     'username' => env('DB_USERNAME', 'root'),
+        //     'password' => env('DB_PASSWORD'),
+        //     'unix_socket' => env('DB_SOCKET', ''),
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '',
+        //     'strict' => true,
+        //     'engine' => null,
+        // ],
 
         'pgsql' => [
             'driver' => 'pgsql',
