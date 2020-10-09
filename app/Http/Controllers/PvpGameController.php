@@ -14,17 +14,7 @@ class PvpGameController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json(PvpGame::all());
     }
 
     /**
@@ -35,7 +25,8 @@ class PvpGameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newGame = PvpGame::create($request->all());
+        return response()->json($newGame);
     }
 
     /**
@@ -46,18 +37,7 @@ class PvpGameController extends Controller
      */
     public function show(PvpGame $pvpGame)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\PvpGame  $pvpGame
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PvpGame $pvpGame)
-    {
-        //
+        return response()->json($pvpGame);
     }
 
     /**
@@ -69,7 +49,10 @@ class PvpGameController extends Controller
      */
     public function update(Request $request, PvpGame $pvpGame)
     {
-        //
+        $pvpGame->update($request->all());
+        $pvpGame->save();
+
+        return response()->json($pvpGame);
     }
 
     /**
