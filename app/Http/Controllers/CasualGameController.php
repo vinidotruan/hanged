@@ -15,7 +15,7 @@ class CasualGameController extends Controller
      */
     public function index()
     {
-        return response()->json(CasualGames::all());
+        return response()->json(CasualGame::paginate(15));
     }
 
     /**
