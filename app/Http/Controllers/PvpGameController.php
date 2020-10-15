@@ -15,7 +15,7 @@ class PvpGameController extends Controller
      */
     public function index()
     {
-        return response()->json(PvpGame::all());
+        return response()->json(PvpGame::paginate(15));
     }
 
     /**
