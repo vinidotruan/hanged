@@ -14,7 +14,7 @@ class CasualGameObserver
      */
     public function created(CasualGame $casualGame)
     {
-        $casualGame->user->points = $casualGame->user->points + $casualGame->points;
+        $casualGame->user->points += $casualGame->points;
         $casualGame->user->save();
     }
 }
