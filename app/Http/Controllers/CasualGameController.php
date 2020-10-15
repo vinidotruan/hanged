@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CasualGame;
+use App\User;
 use Illuminate\Http\Request;
 
 class CasualGameController extends Controller
@@ -64,5 +65,9 @@ class CasualGameController extends Controller
     public function destroy(CasualGame $casualGame)
     {
         //
+    }
+
+    public function ranking() {
+        return response()->json(User::casualRanking()->get());
     }
 }

@@ -43,7 +43,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return response()->json($user->with('games'));
+        $casual = $user->casualGames()->get();
+        $pvp = $user->pvpGames();
+        return response()->json(['casual' => $casual, 'pvp' => $pvp]);
     }
 
     /**

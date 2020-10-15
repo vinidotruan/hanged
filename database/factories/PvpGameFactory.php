@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\PvpGame;
+use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(PvpGame::class, function (Faker $faker) {

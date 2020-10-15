@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\PvpGame;
+use App\User;
 use Illuminate\Http\Request;
 
 class PvpGameController extends Controller
@@ -64,5 +65,9 @@ class PvpGameController extends Controller
     public function destroy(PvpGame $pvpGame)
     {
         //
+    }
+
+    public function ranking() {
+        return response()->json(User::pvpRanking()->get());
     }
 }

@@ -36,4 +36,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function casualGames() {
+        return $this->hasMany(CasualGame::class, 'player_id');
+    }
+
+    public function pvpPlayerOneGames() {
+        return $this->hasMany(PvpGame::class, 'player_one_id');
+    }
+    public function pvpPlayerTwoGames() {
+        return $this->hasMany(PvpGame::class, 'player_two_id');
+    }
+
+    public function pvpGames() {
+        return $this->pvpPlayerTwoGames->merge($this->pvpPlayerOneGames);
+    }
+
+    public function scopeCasualRanking($query) {
+        return $query->orderBy('points', 'desc');
+    }
+
+    public function scopePvpRanking($query) {
+        return $query->orderBy('pvp_points', 'desc');
+    }
+
+    public function addPvpPoints($pointsPlayerWinner, $pointsPlayerLooser) {
+        $this->pvp_points += $pointsPlayerWinner - $pointsPlayerLooser;
+        $this->save();
+    }
 }

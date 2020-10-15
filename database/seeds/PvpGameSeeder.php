@@ -11,6 +11,6 @@ class PvpGameSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\PvpGameSeeder::class, 50)->create();
+        factory(App\PvpGame::class, 50)->create();
     }
 }

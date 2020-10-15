@@ -8,11 +8,11 @@ class PvpGame extends Model
 {
     protected $guarded = [];
 
-    public function player_one() {
-        return $this->hasMany(User::class, 'player_one_id');
+    public function playerOne() {
+        return $this->belongsTo(User::class, 'player_one_id');
     }
 
-    public function player_two() {
-        return $this->hasMany(User::class, 'player_two_id');
+    public function playerTwo() {
+        return $this->belongsTo(User::class, 'player_two_id');
     }
 }
