@@ -25,7 +25,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = [
+            'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ];
