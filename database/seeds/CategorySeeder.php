@@ -11,10 +11,10 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        App\Category::create(['name' => 'historia_brasil']);
-        App\Category::create(['name' => 'historia_eua']);
-        App\Category::create(['name' => 'primeira_guerra']);
-        App\Category::create(['name' => 'segunda_guerra']);
-        App\Category::create(['name' => 'historia_grecia']);
+        App\Category::create(['id' => 1,'name' => 'historia_brasil']);
+        App\Category::create(['id' => 2,'name' => 'historia_eua']);
+        App\Category::create(['id' => 3,'name' => 'primeira_guerra']);
+        App\Category::create(['id' => 4,'name' => 'segunda_guerra']);
+        App\Category::create(['id' => 5,'name' => 'historia_grecia']);
     }
 }
