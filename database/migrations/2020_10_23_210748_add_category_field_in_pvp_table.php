@@ -15,7 +15,6 @@ class AddCategoryFieldInPvpTable extends Migration
     {
         Schema::table('pvp_games', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id')->default(1);
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
