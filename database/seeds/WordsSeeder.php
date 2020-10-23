@@ -25,8 +25,19 @@ class WordsSeeder extends Seeder
         App\Word::create([ "name"=> "Recife", "hint" => "Maior cosmopolita cidade da América durante governo de Maurício Nassau", 'category_id' => 1]);
         App\Word::create([ "name"=> "Salvador", "hint" => "Primeira capital do Brasil", 'category_id' => 1]);
         App\Word::create([ "name"=> "Iluminismo", "hint" => "Movimento responsável pelos três poderes políticos", 'category_id' => 1]);
+        App\Word::create(['name' => 'Jango', 'hint' => 'Último presidente pré ditadura', 'category_id' => 1]);
+
+        App\Word::create(['name' => 'Obama', 'hint' => 'Presidente com maior impacto na representatividade', 'category_id' => 2]);
+        App\Word::create(['name' => 'Independencia', 'hint' => '4 de julho', 'category_id' => 2]);
+        App\Word::create(['name' => 'Comunismo', 'hint' => 'Um dos polos da guerra fria', 'category_id' => 2]);
 
         App\Word::create(['name' => 'Entente', 'hint' => 'formada por Rússia, Grã-Bretanha e França', 'category_id' => 3]);
+        App\Word::create(['name' => 'Bandeira', 'hint' => 'Representa o país', 'category_id' => 3]);
+        App\Word::create(['name' => 'Francisco Fernando', 'hint' => 'Morte que deu início a primeira guerra', 'category_id' => 3]);
 
+        App\Word::create(['name' => 'Ariana', 'hint' => 'Raça pura', 'category_id' => 4]);
+        App\Word::create(['name' => 'Suástica', 'hint' => 'Símbolo marcante do período', 'category_id' => 4]);
+        App\Word::create(['name' => 'Hitler', 'hint' => 'Inimigo dos EUA e também de Mussoulini.', 'category_id' => 4]);
+        
     }
 }
