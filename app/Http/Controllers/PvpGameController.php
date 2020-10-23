@@ -53,7 +53,7 @@ class PvpGameController extends Controller
         $pvpGame->update($request->all());
         $pvpGame->save();
 
-        return response()->json($pvpGame);
+        return response()->json([$pvpGame, 'winner' => ($pvpGame->points_player_one > $pvpGame->points_player_two) ? 'player 1 é o vencedor' : 'player 2 é o vencedor']);
     }
 
     /**

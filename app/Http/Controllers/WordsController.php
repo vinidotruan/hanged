@@ -68,7 +68,7 @@ class WordsController extends Controller
     }
 
     public function random(Category $category) {
-        $word = $category->words->random();
+        $word = $category->words->take(5);
         return response()->json($word);
     }
 }
