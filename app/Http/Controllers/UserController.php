@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
+        dd($request->all());
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -75,5 +75,10 @@ class UserController extends Controller
     {
         $user->delete();
         return response()->json(['message' => "deleted"]);
+    }
+
+    public function login(Request $request ) {
+        $user = User::where('email', $request->emai)->get();
+        return response()->json($user);
     }
 }

@@ -8,6 +8,7 @@ Route::resource('casual-games', 'CasualGameController');
 Route::resource('pvp-games', 'PvpGameController');
 Route::resource('categories', 'CategoryController');
 Route::resource('words', 'WordsController');
+// Route::post('login', 'UserController@login');
 
 Route::group([
     'prefix' => 'rankings'
