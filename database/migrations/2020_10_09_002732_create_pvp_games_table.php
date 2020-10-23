@@ -17,12 +17,11 @@ class CreatePvpGamesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('player_one_id');
             $table->unsignedBigInteger('player_two_id');
-            $table->unsignedBigInteger('category_id');
             $table->integer('points_player_one')->nullable();
             $table->integer('points_player_two')->nullable();
             $table->foreign('player_one_id')->references('id')->on('users');
             $table->foreign('player_two_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
+            
             $table->timestamps();
         });
     }
