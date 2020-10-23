@@ -63,6 +63,12 @@ class WordsController extends Controller
      */
     public function destroy(Word $word)
     {
-        //
+        $word->delete();
+        return response()->json(['message' => 'deleted']);
+    }
+
+    public function random(Category $category) {
+        $word = $category->words->random();
+        return response()->json($word);
     }
 }
