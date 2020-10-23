@@ -25,7 +25,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -79,6 +78,8 @@ class UserController extends Controller
 
     public function login(Request $request ) {
         $user = User::where('email', $request->emai)->get();
+
+        $response = [ 'user' => $user, 'logged' => true, 'admin' => ($request->email == 'admin@admin.com')];
         return response()->json($user);
     }
 }
