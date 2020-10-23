@@ -67,7 +67,7 @@ class WordsController extends Controller
         return response()->json(['message' => 'deleted']);
     }
 
-    public function random(Category $category) {
+    public function random(\App\Category $category) {
         $word = $category->words->take(5);
         return response()->json($word);
     }

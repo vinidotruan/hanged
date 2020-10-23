@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', 'UserController@login');
-Route::get('categories/{category}/random-words', 'WordsController@randomWord');
+Route::get('categories/{category}/random-words', 'WordsController@random');
 Route::resource('users', 'UserController');
 Route::resource('casual-games', 'CasualGameController');
 Route::resource('pvp-games', 'PvpGameController');
