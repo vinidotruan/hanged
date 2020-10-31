@@ -77,7 +77,6 @@ class UserController extends Controller
     }
 
     public function login(Request $request ) {
-        return response()->json($request);
         $user = User::where('email', $request->emai)->get();
         $response = [ 'user' => $user, 'logged' => true, 'admin' => ($request->email == 'admin@admin.com')];
         return response()->json($response);
